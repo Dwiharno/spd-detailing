@@ -1,0 +1,34 @@
+CARA ONLINE-KAN WEBSITE PT SUKSES PERSADA DETAILING
+(Netlify + GitHub, gratis, tanpa perlu terminal)
+
+A. UPLOAD FILE KE GITHUB
+1. Daftar/login di https://github.com
+2. Klik "+" (kanan atas) > "New repository". Nama: spd-detailing. Klik "Create repository".
+3. Klik link "uploading an existing file".
+4. Ekstrak ZIP ini. Buka folder "spd", pilih SEMUA isinya
+   (index.html, netlify.toml, CARA-HOSTING.txt, folder netlify) lalu seret ke halaman GitHub.
+   Pastikan folder netlify/functions/chat.mjs ikut ter-upload.
+5. Klik "Commit changes".
+
+B. HUBUNGKAN KE NETLIFY
+1. Login di https://app.netlify.com (pakai akun GitHub).
+2. "Add new site" > "Import an existing project" > GitHub > pilih repo spd-detailing.
+3. Biarkan pengaturan bawaan, klik "Deploy". ±1 menit website online di xxx.netlify.app.
+
+C. AKTIFKAN ASISTEN AI
+1. Buat API key di https://console.anthropic.com (isi kredit dulu).
+2. Netlify: Site configuration > Environment variables > Add a variable
+   Key   : ANTHROPIC_API_KEY
+   Value : (tempel API key)
+3. Tab "Deploys" > "Trigger deploy" > "Deploy site".
+   Tanpa langkah C, chat tetap jalan dalam "mode jawaban cepat" (dari FAQ).
+   Saran: pasang batas pemakaian (spend limit) di console.anthropic.com.
+
+D. NAMA & DOMAIN
+- Ganti nama: Site configuration > Change site name (mis. spd-detailing.netlify.app).
+- Domain sendiri: Domain management > Add a domain, ikuti petunjuk DNS Netlify.
+- Lalu ganti "[domain-anda].com" di bagian atas index.html dengan domain asli.
+
+MENGUBAH DATA NANTI
+Di GitHub buka index.html > ikon pensil > cari "const CONFIG" > ubah > Commit.
+Netlify otomatis meng-update website dalam ±1 menit.
